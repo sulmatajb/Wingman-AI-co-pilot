@@ -92,7 +92,6 @@ MIT - use it, fork it, build on it.
 ---
 
 **Built by [Besnik](https://linkedin.com/in/yourprofile)**  
-Customer Care Manager & AI Champion at Schneider Electric  
-Automation consultant at Besnik.AI
+
 
 ⭐ Star this repo if it helped you nail that conversation.
