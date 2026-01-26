@@ -4,7 +4,7 @@ An AI co-pilot for high-stakes conversations. Get researched conversation starte
 
 **Built for the 70% of Gen Z professionals who say anxiety is their biggest career challenge.**
 
-[Try it live](your-vercel-link) • [Setup Guide](SETUP.md)
+[Try it live](https://ai-wingman.vercel.app/) • [Setup Guide](SETUP.md)
 
 ---
 
