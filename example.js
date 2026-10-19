@@ -1,0 +1,25 @@
+(function (root) {
+  "use strict";
+  const example = {
+    card1: {
+      hook: "What’s one part of your team’s work you wish were easier?",
+      anchor: "The idea is a small pilot: one team, one workflow, one week.",
+      exit: "I’d like to hear more. Could we compare notes another time?",
+      mantra: "I can start with a question and listen."
+    },
+    card2: {
+      hook: "I’m trying out a small tool for meeting follow-ups. What do you use today?",
+      anchor: "This fictional demo turns meeting notes into a short list of next steps.",
+      exit: "Thanks for the context. I can share the outline if it would be useful.",
+      mantra: "A clear explanation is enough."
+    },
+    card3: {
+      hook: "I’m new to this project, and I’d love to understand what matters most to your team.",
+      anchor: "The fictional project starts with one shared workflow before adding more.",
+      exit: "That gives me a good place to start. Thank you for your time.",
+      mantra: "I don’t need to know everything to take part."
+    }
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = example;
+  else root.WingmanExample = example;
+})(globalThis);
