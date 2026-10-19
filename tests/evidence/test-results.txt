@@ -1,0 +1,295 @@
+TAP version 13
+# Subtest: valid raw JSON
+ok 1 - valid raw JSON
+  ---
+  duration_ms: 1.829458
+  ...
+# Subtest: valid json code fence
+ok 2 - valid json code fence
+  ---
+  duration_ms: 0.831708
+  ...
+# Subtest: valid generic code fence
+ok 3 - valid generic code fence
+  ---
+  duration_ms: 0.647375
+  ...
+# Subtest: valid uppercase JSON code fence
+ok 4 - valid uppercase JSON code fence
+  ---
+  duration_ms: 0.600625
+  ...
+# Subtest: valid split text blocks
+ok 5 - valid split text blocks
+  ---
+  duration_ms: 0.629708
+  ...
+# Subtest: legacy untyped text block
+ok 6 - legacy untyped text block
+  ---
+  duration_ms: 0.995417
+  ...
+# Subtest: invalid JSON
+ok 7 - invalid JSON
+  ---
+  duration_ms: 0.735833
+  ...
+# Subtest: truncated JSON
+ok 8 - truncated JSON
+  ---
+  duration_ms: 0.718666
+  ...
+# Subtest: empty object
+ok 9 - empty object
+  ---
+  duration_ms: 0.850542
+  ...
+# Subtest: null root
+ok 10 - null root
+  ---
+  duration_ms: 0.97775
+  ...
+# Subtest: array root
+ok 11 - array root
+  ---
+  duration_ms: 0.737833
+  ...
+# Subtest: valid cards inside array must not be unwrapped
+ok 12 - valid cards inside array must not be unwrapped
+  ---
+  duration_ms: 0.695
+  ...
+# Subtest: string root must not be unwrapped
+ok 13 - string root must not be unwrapped
+  ---
+  duration_ms: 0.623167
+  ...
+# Subtest: number root
+ok 14 - number root
+  ---
+  duration_ms: 0.580125
+  ...
+# Subtest: boolean root
+ok 15 - boolean root
+  ---
+  duration_ms: 0.564166
+  ...
+# Subtest: prose surrounding JSON
+ok 16 - prose surrounding JSON
+  ---
+  duration_ms: 0.613334
+  ...
+# Subtest: multiple JSON objects
+ok 17 - multiple JSON objects
+  ---
+  duration_ms: 0.572333
+  ...
+# Subtest: missing provider content
+ok 18 - missing provider content
+  ---
+  duration_ms: 0.547834
+  ...
+# Subtest: null provider payload
+ok 19 - null provider payload
+  ---
+  duration_ms: 0.676
+  ...
+# Subtest: empty content array
+ok 20 - empty content array
+  ---
+  duration_ms: 0.6
+  ...
+# Subtest: non-array content
+ok 21 - non-array content
+  ---
+  duration_ms: 0.559916
+  ...
+# Subtest: non-string text
+ok 22 - non-string text
+  ---
+  duration_ms: 0.561292
+  ...
+# Subtest: null text block
+ok 23 - null text block
+  ---
+  duration_ms: 0.5635
+  ...
+# Subtest: unsupported content type
+ok 24 - unsupported content type
+  ---
+  duration_ms: 0.570791
+  ...
+# Subtest: provider API error
+ok 25 - provider API error
+  ---
+  duration_ms: 0.926875
+  ...
+# Subtest: transport error output
+ok 26 - transport error output
+  ---
+  duration_ms: 0.538208
+  ...
+# Subtest: provider error alongside otherwise valid text
+ok 27 - provider error alongside otherwise valid text
+  ---
+  duration_ms: 0.559916
+  ...
+# Subtest: missing card1
+ok 28 - missing card1
+  ---
+  duration_ms: 0.581292
+  ...
+# Subtest: missing card1.hook
+ok 29 - missing card1.hook
+  ---
+  duration_ms: 0.56525
+  ...
+# Subtest: missing card1.anchor
+ok 30 - missing card1.anchor
+  ---
+  duration_ms: 0.572166
+  ...
+# Subtest: missing card1.exit
+ok 31 - missing card1.exit
+  ---
+  duration_ms: 0.560958
+  ...
+# Subtest: missing card1.mantra
+ok 32 - missing card1.mantra
+  ---
+  duration_ms: 0.587292
+  ...
+# Subtest: missing card2
+ok 33 - missing card2
+  ---
+  duration_ms: 0.55775
+  ...
+# Subtest: missing card2.hook
+ok 34 - missing card2.hook
+  ---
+  duration_ms: 0.559125
+  ...
+# Subtest: missing card2.anchor
+ok 35 - missing card2.anchor
+  ---
+  duration_ms: 0.551667
+  ...
+# Subtest: missing card2.exit
+ok 36 - missing card2.exit
+  ---
+  duration_ms: 0.543583
+  ...
+# Subtest: missing card2.mantra
+ok 37 - missing card2.mantra
+  ---
+  duration_ms: 0.603541
+  ...
+# Subtest: missing card3
+ok 38 - missing card3
+  ---
+  duration_ms: 0.550833
+  ...
+# Subtest: missing card3.hook
+ok 39 - missing card3.hook
+  ---
+  duration_ms: 0.566625
+  ...
+# Subtest: missing card3.anchor
+ok 40 - missing card3.anchor
+  ---
+  duration_ms: 0.93175
+  ...
+# Subtest: missing card3.exit
+ok 41 - missing card3.exit
+  ---
+  duration_ms: 0.633459
+  ...
+# Subtest: missing card3.mantra
+ok 42 - missing card3.mantra
+  ---
+  duration_ms: 0.584208
+  ...
+# Subtest: wrong card type: null
+ok 43 - wrong card type: null
+  ---
+  duration_ms: 0.565167
+  ...
+# Subtest: wrong card type: array
+ok 44 - wrong card type: array
+  ---
+  duration_ms: 0.551875
+  ...
+# Subtest: wrong card type: string
+ok 45 - wrong card type: string
+  ---
+  duration_ms: 0.653458
+  ...
+# Subtest: wrong card type: number
+ok 46 - wrong card type: number
+  ---
+  duration_ms: 0.594333
+  ...
+# Subtest: wrong card type: boolean
+ok 47 - wrong card type: boolean
+  ---
+  duration_ms: 0.572083
+  ...
+# Subtest: wrong field type: null
+ok 48 - wrong field type: null
+  ---
+  duration_ms: 0.56575
+  ...
+# Subtest: wrong field type: array
+ok 49 - wrong field type: array
+  ---
+  duration_ms: 0.698125
+  ...
+# Subtest: wrong field type: object
+ok 50 - wrong field type: object
+  ---
+  duration_ms: 0.602541
+  ...
+# Subtest: wrong field type: number
+ok 51 - wrong field type: number
+  ---
+  duration_ms: 0.609042
+  ...
+# Subtest: wrong field type: boolean
+ok 52 - wrong field type: boolean
+  ---
+  duration_ms: 0.654333
+  ...
+# Subtest: empty required field
+ok 53 - empty required field
+  ---
+  duration_ms: 0.5845
+  ...
+# Subtest: whitespace required field
+ok 54 - whitespace required field
+  ---
+  duration_ms: 0.549459
+  ...
+# Subtest: valid card text is preserved
+ok 55 - valid card text is preserved
+  ---
+  duration_ms: 0.541834
+  ...
+# Subtest: missing previous-node context preserves a valid response and uses Unknown intention
+ok 56 - missing previous-node context preserves a valid response and uses Unknown intention
+  ---
+  duration_ms: 1.053583
+  ...
+# Subtest: export retains both provider branches and respond-to-webhook mode
+ok 57 - export retains both provider branches and respond-to-webhook mode
+  ---
+  duration_ms: 0.057125
+  ...
+1..57
+# tests 57
+# suites 0
+# pass 57
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 87.116667

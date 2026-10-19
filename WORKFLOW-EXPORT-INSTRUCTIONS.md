@@ -1,54 +1,44 @@
-# wingman-workflow.json
+# Maintaining Wingman-workflow.json
 
-**You need to export this from your n8n instance.**
+[`Wingman-workflow.json`](Wingman-workflow.json) is already included. New users can import it directly using [SETUP.md](SETUP.md); exporting a workflow first is not a setup requirement. Preserve the capital `W` in the filename because the offline harness reads that exact path.
 
-## How to Export Your Workflow:
+If you change a workflow in your own n8n instance, export its JSON and review the diff before replacing this file. Use n8n's [export/import documentation](https://docs.n8n.io/build/manage-workflows/export-and-import.md) for the available export controls in your version.
 
-1. Open your Wingman workflow in n8n
-2. Click the **...** menu (top right)
-3. Select **Download**
-4. Save as `wingman-workflow.json`
-5. Upload this file to your GitHub repo
+## Review an export before sharing
 
----
+Do not assume export automatically removes secrets. n8n documents that exported JSON includes credential names and IDs, and HTTP Request nodes can contain authentication headers copied from cURL. Inspect credentials, literal headers, code, URLs, pinned/example data and instance metadata; remove secrets and personal data before sharing. See the [official credential-sharing note](https://docs.n8n.io/build/manage-workflows/export-and-import.md).
 
-## Important Notes Before Exporting:
+The public template omits credential bindings, instance metadata, workflow/version IDs and webhook IDs, and is stored inactive. Each installation must select its own credentials and enable the workflow deliberately. Node IDs, logic, prompts, provider request settings and connections are retained. Historical `tests/evidence/` snapshots keep their original workflow hashes; run the current offline checks for the current template.
 
-### Remove Sensitive Data
-Before uploading to GitHub, make sure your exported workflow does NOT contain:
-- Your actual API keys (n8n should strip these automatically)
-- Your n8n instance URL
-- Any personal webhook URLs
+## Current workflow structure
 
-### What Should Be Included:
-- All node configurations
-- Workflow logic
-- Node connections
-- Placeholder credential references (not actual keys)
+The included export contains these 13 nodes:
 
----
+| Node | Purpose |
+| --- | --- |
+| Webhook Trigger | Receives `POST` on the configured `careercalm` path |
+| Validate Input | Requires a nonblank string at `body.intention` |
+| Validation Error | Returns the configured `400` body |
+| Prepare Perplexity Request | Prepares the research request |
+| Perplexity Research API | Calls the configured research service |
+| Process Research & Prepare Claude | Validates research text and prepares coaching only on success |
+| Research OK? | Routes usable research to coaching, failures to `503` |
+| Claude Coaching API | Calls the configured coaching service |
+| Parse & Validate Response | Requires all three cards and their text fields |
+| Parse OK? | Routes complete cards to success, failures to `500` |
+| Success Response | Returns the three cards with `200` |
+| Error Response | Returns the configured coaching/validation error with `500` |
+| Research Error Response | Returns the configured research error with `503` |
 
-## Workflow Structure Overview
+Both provider nodes route their normal and error outputs through the respective validation code. Keep those connections when updating the export.
 
-Your exported workflow should contain these nodes:
+## Check a changed export locally
 
-1. **Webhook Trigger** - Receives requests from frontend
-2. **Prepare Perplexity Request** - Extracts scenario from input
-3. **Perplexity API Call** - Searches for current research
-4. **Process Research & Prepare Claude** - Formats data for Claude
-5. **Claude API Call** - Generates confidence cards
-6. **Parse Claude Response** - Extracts the 3 cards
-7. **Webhook Response** - Returns JSON to frontend
+From the repository root with Node.js 22:
 
----
+```bash
+node --test --test-concurrency=1 tests/*-validation.test.mjs
+node tests/input-demo.mjs
+```
 
-## After Exporting:
-
-1. Open the JSON file in a text editor
-2. Search for any sensitive data (API keys, URLs)
-3. Replace with placeholders if needed
-4. Upload to GitHub
-
----
-
-**Need help?** Check the [SETUP.md](SETUP.md) guide for full instructions.
+These checks execute the exported code and a limited synthetic interpretation of the connections. They make no provider calls and leave historical evidence unchanged. They do not verify n8n import compatibility, live credentials, HTTP serialization, model availability or factual research quality. A deliberate live integration check is separate and can incur provider charges.

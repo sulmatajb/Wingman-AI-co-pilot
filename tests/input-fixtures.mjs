@@ -1,0 +1,31 @@
+// Synthetic inputs only; no credentials, personal scenarios or provider calls.
+export const invalidInputs = [
+  { name: 'null input', input: null },
+  { name: 'missing body', input: {} },
+  { name: 'null body', input: { body: null } },
+  { name: 'string body', input: { body: 'synthetic' } },
+  { name: 'array body', input: { body: [] } },
+  { name: 'missing intention', input: { body: {} } },
+  { name: 'null intention', input: { body: { intention: null } } },
+  { name: 'empty intention', input: { body: { intention: '' } } },
+  { name: 'space-only intention', input: { body: { intention: '   ' } } },
+  { name: 'tab/newline intention', input: { body: { intention: '\t\n\r' } } },
+  { name: 'Unicode whitespace intention', input: { body: { intention: '\u00a0\u2003' } } },
+  { name: 'numeric intention', input: { body: { intention: 7 } } },
+  { name: 'zero intention', input: { body: { intention: 0 } } },
+  { name: 'boolean intention', input: { body: { intention: true } } },
+  { name: 'false intention', input: { body: { intention: false } } },
+  { name: 'array intention', input: { body: { intention: ['Synthetic scenario'] } } },
+  { name: 'object intention', input: { body: { intention: { scenario: 'Synthetic scenario' } } } },
+  { name: 'query only cannot bypass body contract', input: { query: { intention: 'Synthetic query' } } },
+  { name: 'top-level only cannot bypass body contract', input: { intention: 'Synthetic top-level' } },
+  { name: 'blank body cannot use query fallback', input: { body: { intention: ' ' }, query: { intention: 'Synthetic query' } } },
+  { name: 'invalid body cannot use top-level fallback', input: { body: { intention: 42 }, intention: 'Synthetic top-level' } },
+];
+export const validInputs = [
+  { name: 'ordinary scenario', intention: 'Presenting a synthetic project at a team meeting.' },
+  { name: 'single character has no arbitrary minimum', intention: 'x' },
+  { name: 'padded scenario is preserved', intention: '  Synthetic scenario.  ' },
+  { name: 'Unicode scenario is preserved', intention: 'Présentation synthétique — café.' },
+  { name: 'multiline scenario is preserved', intention: '\nSynthetic project.\nDiscuss two options.\n' },
+].map(fixture => ({ ...fixture, input: { body: { intention: fixture.intention } } }));

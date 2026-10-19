@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="Read three Wingman confidence cards from a saved response. No account or service connection.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'none'; connect-src 'none'; font-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Wingman — Conversation cards</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="cards.js"></script>
+  <script defer src="example.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#cards-title">Skip to cards</a>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Wingman card viewer home"><span class="brand-mark" aria-hidden="true">w</span> Wingman</a>
+    <span class="offline"><span aria-hidden="true"></span> Offline card viewer</span>
+  </header>
+  <main>
+    <section class="intro" aria-labelledby="page-title">
+      <div><p class="eyebrow">A little preparation, in your own words</p><h1 id="page-title">Conversation cards.</h1><p class="lead">Open a saved Wingman response, or explore the synthetic example. Choose the opening you want to use.</p></div>
+      <div class="import-box">
+        <label for="response-file">Open a saved response</label>
+        <input id="response-file" type="file" accept=".json,application/json" aria-describedby="import-help">
+        <p id="import-help">One JSON file · up to 1 MiB.<br>Read in this tab. No upload or saved history.</p>
+      </div>
+    </section>
+    <div class="toolbar">
+      <div><span id="mode" class="mode">Synthetic example</span><p id="context">Fictional scenario: meeting a new teammate about an internal tool. No research or provider call.</p></div>
+      <div class="actions"><button id="example-button" type="button">Use example</button><button id="clear-button" type="button" class="quiet">Clear</button></div>
+    </div>
+    <p id="status" role="status" aria-live="polite" aria-atomic="true"></p>
+    <p id="error" role="alert" hidden></p>
+    <section aria-labelledby="cards-title" id="card-section">
+      <div class="section-heading"><h2 id="cards-title" tabindex="-1">Three options</h2><p>Hook → anchor → exit. Keep the mantra with you.</p></div>
+      <div id="cards" class="cards"></div>
+    </section>
+    <section id="empty" class="empty" hidden><h2>No cards open</h2><p>Choose a saved response above, or use the synthetic example to see the format.</p></section>
+    <section id="research" class="research" aria-labelledby="research-title" hidden>
+      <div><p class="eyebrow">Context, not verification</p><h2 id="research-title">Research references</h2><p>References recorded in this response. They do not verify any card or claim. Opening a link leaves this local viewer.</p></div>
+      <ol id="sources"></ol>
+    </section>
+    <p id="source-note" class="source-note"></p>
+  </main>
+  <footer><span>Wingman / saved-response viewer · <a href="https://github.com/sulmatajb/Wingman-AI-co-pilot" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">Source</a> · <a href="https://github.com/sulmatajb/Wingman-AI-co-pilot/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">MIT License</a></span><span>No generation, accounts or service connection. Links open only when you choose.</span></footer>
+  <noscript>This viewer needs JavaScript to validate and display a local JSON response. No network connection is needed.</noscript>
+</body>
+</html>

@@ -1,0 +1,1383 @@
+{
+  "generated_at": "2026-10-16T05:22:21.593Z",
+  "node_version": "v22.14.0",
+  "workflow_sha256": "146e7a063a4b8e853e97904e1312702328f61fa26fb8def254389a58b462cef5",
+  "scope": "Synthetic offline execution of exported Code-node JavaScript and a narrowly supported subset of the configured IF/response graph. No n8n service, provider API, or webhook was called.",
+  "summary": {
+    "fixtures": 55,
+    "accepted": 7,
+    "rejected": 48
+  },
+  "results": [
+    {
+      "fixture": "valid raw JSON",
+      "expected_status": 200,
+      "path": [
+        "Claude Coaching API",
+        "Parse & Validate Response",
+        "Parse OK?",
+        "Success Response"
+      ],
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json",
+          "X-CareerCalm-Status": "success",
+          "Cache-Control": "no-cache"
+        },
+        "body": {
+          "card1": {
+            "hook": "How did the pilot go?",
+            "anchor": "The team tested two approaches.",
+            "exit": "Can we follow up over coffee?",
+            "mantra": "I can ask one useful question."
+          },
+          "card2": {
+            "hook": "What surprised you this week?",
+            "anchor": "The demo highlighted a clear tradeoff.",
+            "exit": "Let's connect after the meeting.",
+            "mantra": "I do not need every answer."
+          },
+          "card3": {
+            "hook": "What are you working on next?",
+            "anchor": "The project has a concrete next step.",
+            "exit": "I will send you a short follow-up.",
+            "mantra": "Curiosity is enough to begin."
+          }
+        }
+      }
+    },
+    {
+      "fixture": "valid json code fence",
+      "expected_status": 200,
+      "path": [
+        "Claude Coaching API",
+        "Parse & Validate Response",
+        "Parse OK?",
+        "Success Response"
+      ],
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json",
+          "X-CareerCalm-Status": "success",
+          "Cache-Control": "no-cache"
+        },
+        "body": {
+          "card1": {
+            "hook": "How did the pilot go?",
+            "anchor": "The team tested two approaches.",
+            "exit": "Can we follow up over coffee?",
+            "mantra": "I can ask one useful question."
+          },
+          "card2": {
+            "hook": "What surprised you this week?",
+            "anchor": "The demo highlighted a clear tradeoff.",
+            "exit": "Let's connect after the meeting.",
+            "mantra": "I do not need every answer."
+          },
+          "card3": {
+            "hook": "What are you working on next?",
+            "anchor": "The project has a concrete next step.",
+            "exit": "I will send you a short follow-up.",
+            "mantra": "Curiosity is enough to begin."
+          }
+        }
+      }
+    },
+    {
+      "fixture": "valid generic code fence",
+      "expected_status": 200,
+      "path": [
+        "Claude Coaching API",
+        "Parse & Validate Response",
+        "Parse OK?",
+        "Success Response"
+      ],
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json",
+          "X-CareerCalm-Status": "success",
+          "Cache-Control": "no-cache"
+        },
+        "body": {
+          "card1": {
+            "hook": "How did the pilot go?",
+            "anchor": "The team tested two approaches.",
+            "exit": "Can we follow up over coffee?",
+            "mantra": "I can ask one useful question."
+          },
+          "card2": {
+            "hook": "What surprised you this week?",
+            "anchor": "The demo highlighted a clear tradeoff.",
+            "exit": "Let's connect after the meeting.",
+            "mantra": "I do not need every answer."
+          },
+          "card3": {
+            "hook": "What are you working on next?",
+            "anchor": "The project has a concrete next step.",
+            "exit": "I will send you a short follow-up.",
+            "mantra": "Curiosity is enough to begin."
+          }
+        }
+      }
+    },
+    {
+      "fixture": "valid uppercase JSON code fence",
+      "expected_status": 200,
+      "path": [
+        "Claude Coaching API",
+        "Parse & Validate Response",
+        "Parse OK?",
+        "Success Response"
+      ],
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json",
+          "X-CareerCalm-Status": "success",
+          "Cache-Control": "no-cache"
+        },
+        "body": {
+          "card1": {
+            "hook": "How did the pilot go?",
+            "anchor": "The team tested two approaches.",
+            "exit": "Can we follow up over coffee?",
+            "mantra": "I can ask one useful question."
+          },
+          "card2": {
+            "hook": "What surprised you this week?",
+            "anchor": "The demo highlighted a clear tradeoff.",
+            "exit": "Let's connect after the meeting.",
+            "mantra": "I do not need every answer."
+          },
+          "card3": {
+            "hook": "What are you working on next?",
+            "anchor": "The project has a concrete next step.",
+            "exit": "I will send you a short follow-up.",
+            "mantra": "Curiosity is enough to begin."
+          }
+        }
+      }
+    },
+    {
+      "fixture": "valid split text blocks",
+      "expected_status": 200,
+      "path": [
+        "Claude Coaching API",
+        "Parse & Validate Response",
+        "Parse OK?",
+        "Success Response"
+      ],
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json",
+          "X-CareerCalm-Status": "success",
+          "Cache-Control": "no-cache"
+        },
+        "body": {
+          "card1": {
+            "hook": "How did the pilot go?",
+            "anchor": "The team tested two approaches.",
+            "exit": "Can we follow up over coffee?",
+            "mantra": "I can ask one useful question."
+          },
+          "card2": {
+            "hook": "What surprised you this week?",
+            "anchor": "The demo highlighted a clear tradeoff.",
+            "exit": "Let's connect after the meeting.",
+            "mantra": "I do not need every answer."
+          },
+          "card3": {
+            "hook": "What are you working on next?",
+            "anchor": "The project has a concrete next step.",
+            "exit": "I will send you a short follow-up.",
+            "mantra": "Curiosity is enough to begin."
+          }
+        }
+      }
+    },
+    {
+      "fixture": "legacy untyped text block",
+      "expected_status": 200,
+      "path": [
+        "Claude Coaching API",
+        "Parse & Validate Response",
+        "Parse OK?",
+        "Success Response"
+      ],
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json",
+          "X-CareerCalm-Status": "success",
+          "Cache-Control": "no-cache"
+        },
+        "body": {
+          "card1": {
+            "hook": "How did the pilot go?",
+            "anchor": "The team tested two approaches.",
+            "exit": "Can we follow up over coffee?",
+            "mantra": "I can ask one useful question."
+          },
+          "card2": {
+            "hook": "What surprised you this week?",
+            "anchor": "The demo highlighted a clear tradeoff.",
+            "exit": "Let's connect after the meeting.",
+            "mantra": "I do not need every answer."
+          },
+          "card3": {
+            "hook": "What are you working on next?",
+            "anchor": "The project has a concrete next step.",
+            "exit": "I will send you a short follow-up.",
+            "mantra": "Curiosity is enough to begin."
+          }
+        }
+      }
+    },
+    {
+      "fixture": "invalid JSON",
+      "expected_status": 500,
+      "path": [
+        "Claude Coaching API",
+        "Parse & Validate Response",
+        "Parse OK?",
+        "Error Response"
+      ],
+      "response": {
+        "status": 500,
+        "headers": {
+          "Content-Type": "application/json",
+          "X-CareerCalm-Status": "error"
+        },
+        "body": {
+          "error": "JSON Parsing Failed",
+          "details": "Expected one JSON object, optionally wrapped in a Markdown code fence.",
+          "intention": "Practicing a project introduction.",
+          "suggestion": "The coaching service could not produce complete confidence cards. Please try again."
+        }
+      }
+    },
+    {
+      "fixture": "truncated JSON",
+      "expected_status": 500,
+      "path": [
+        "Claude Coaching API",
+        "Parse & Validate Response",
+        "Parse OK?",
+        "Error Response"
+      ],
+      "response": {
+        "status": 500,
+        "headers": {
+          "Content-Type": "application/json",
+          "X-CareerCalm-Status": "error"
+        },
+        "body": {
+          "error": "JSON Parsing Failed",
+          "details": "Expected one JSON object, optionally wrapped in a Markdown code fence.",
+          "intention": "Practicing a project introduction.",
+          "suggestion": "The coaching service could not produce complete confidence cards. Please try again."
+        }
+      }
+    },
+    {
+      "fixture": "empty object",
+      "expected_status": 500,
+      "path": [
+        "Claude Coaching API",
+        "Parse & Validate Response",
+        "Parse OK?",
+        "Error Response"
+      ],
+      "response": {
+        "status": 500,
+        "headers": {
+          "Content-Type": "application/json",
+          "X-CareerCalm-Status": "error"
+        },
+        "body": {
+          "error": "Invalid confidence cards",
+          "details": "card1 must be an object with hook, anchor, exit and mantra.",
+          "intention": "Practicing a project introduction.",
+          "suggestion": "The coaching service could not produce complete confidence cards. Please try again."
+        }
+      }
+    },
+    {
+      "fixture": "null root",
+      "expected_status": 500,
+      "path": [
+        "Claude Coaching API",
+        "Parse & Validate Response",
+        "Parse OK?",
+        "Error Response"
+      ],
+      "response": {
+        "status": 500,
+        "headers": {
+          "Content-Type": "application/json",
+          "X-CareerCalm-Status": "error"
+        },
+        "body": {
+          "error": "Invalid confidence cards",
+          "details": "Response must be an object containing card1, card2 and card3.",
+          "intention": "Practicing a project introduction.",
+          "suggestion": "The coaching service could not produce complete confidence cards. Please try again."
+        }
+      }
+    },
+    {
+      "fixture": "array root",
+      "expected_status": 500,
+      "path": [
+        "Claude Coaching API",
+        "Parse & Validate Response",
+        "Parse OK?",
+        "Error Response"
+      ],
+      "response": {
+        "status": 500,
+        "headers": {
+          "Content-Type": "application/json",
+          "X-CareerCalm-Status": "error"
+        },
+        "body": {
+          "error": "Invalid confidence cards",
+          "details": "Response must be an object containing card1, card2 and card3.",
+          "intention": "Practicing a project introduction.",
+          "suggestion": "The coaching service could not produce complete confidence cards. Please try again."
+        }
+      }
+    },
+    {
+      "fixture": "valid cards inside array must not be unwrapped",
+      "expected_status": 500,
+      "path": [
+        "Claude Coaching API",
+        "Parse & Validate Response",
+        "Parse OK?",
+        "Error Response"
+      ],
+      "response": {
+        "status": 500,
+        "headers": {
+          "Content-Type": "application/json",
+          "X-CareerCalm-Status": "error"
+        },
+        "body": {
+          "error": "Invalid confidence cards",
+          "details": "Response must be an object containing card1, card2 and card3.",
+          "intention": "Practicing a project introduction.",
+          "suggestion": "The coaching service could not produce complete confidence cards. Please try again."
+        }
+      }
+    },
+    {
+      "fixture": "string root must not be unwrapped",
+      "expected_status": 500,
+      "path": [
+        "Claude Coaching API",
+        "Parse & Validate Response",
+        "Parse OK?",
+        "Error Response"
+      ],
+      "response": {
+        "status": 500,
+        "headers": {
+          "Content-Type": "application/json",
+          "X-CareerCalm-Status": "error"
+        },
+        "body": {
+          "error": "Invalid confidence cards",
+          "details": "Response must be an object containing card1, card2 and card3.",
+          "intention": "Practicing a project introduction.",
+          "suggestion": "The coaching service could not produce complete confidence cards. Please try again."
+        }
+      }
+    },
+    {
+      "fixture": "number root",
+      "expected_status": 500,
+      "path": [
+        "Claude Coaching API",
+        "Parse & Validate Response",
+        "Parse OK?",
+        "Error Response"
+      ],
+      "response": {
+        "status": 500,
+        "headers": {
+          "Content-Type": "application/json",
+          "X-CareerCalm-Status": "error"
+        },
+        "body": {
+          "error": "Invalid confidence cards",
+          "details": "Response must be an object containing card1, card2 and card3.",
+          "intention": "Practicing a project introduction.",
+          "suggestion": "The coaching service could not produce complete confidence cards. Please try again."
+        }
+      }
+    },
+    {
+      "fixture": "boolean root",
+      "expected_status": 500,
+      "path": [
+        "Claude Coaching API",
+        "Parse & Validate Response",
+        "Parse OK?",
+        "Error Response"
+      ],
+      "response": {
+        "status": 500,
+        "headers": {
+          "Content-Type": "application/json",
+          "X-CareerCalm-Status": "error"
+        },
+        "body": {
+          "error": "Invalid confidence cards",
+          "details": "Response must be an object containing card1, card2 and card3.",
+          "intention": "Practicing a project introduction.",
+          "suggestion": "The coaching service could not produce complete confidence cards. Please try again."
+        }
+      }
+    },
+    {
+      "fixture": "prose surrounding JSON",
+      "expected_status": 500,
+      "path": [
+        "Claude Coaching API",
+        "Parse & Validate Response",
+        "Parse OK?",
+        "Error Response"
+      ],
+      "response": {
+        "status": 500,
+        "headers": {
+          "Content-Type": "application/json",
+          "X-CareerCalm-Status": "error"
+        },
+        "body": {
+          "error": "JSON Parsing Failed",
+          "details": "Expected one JSON object, optionally wrapped in a Markdown code fence.",
+          "intention": "Practicing a project introduction.",
+          "suggestion": "The coaching service could not produce complete confidence cards. Please try again."
+        }
+      }
+    },
+    {
+      "fixture": "multiple JSON objects",
+      "expected_status": 500,
+      "path": [
+        "Claude Coaching API",
+        "Parse & Validate Response",
+        "Parse OK?",
+        "Error Response"
+      ],
+      "response": {
+        "status": 500,
+        "headers": {
+          "Content-Type": "application/json",
+          "X-CareerCalm-Status": "error"
+        },
+        "body": {
+          "error": "JSON Parsing Failed",
+          "details": "Expected one JSON object, optionally wrapped in a Markdown code fence.",
+          "intention": "Practicing a project introduction.",
+          "suggestion": "The coaching service could not produce complete confidence cards. Please try again."
+        }
+      }
+    },
+    {
+      "fixture": "missing provider content",
+      "expected_status": 500,
+      "path": [
+        "Claude Coaching API",
+        "Parse & Validate Response",
+        "Parse OK?",
+        "Error Response"
+      ],
+      "response": {
+        "status": 500,
+        "headers": {
+          "Content-Type": "application/json",
+          "X-CareerCalm-Status": "error"
+        },
+        "body": {
+          "error": "Claude API failed",
+          "details": "The coaching service did not return supported text content. Please try again.",
+          "intention": "Practicing a project introduction.",
+          "suggestion": "The coaching service could not produce complete confidence cards. Please try again."
+        }
+      }
+    },
+    {
+      "fixture": "null provider payload",
+      "expected_status": 500,
+      "path": [
+        "Claude Coaching API",
+        "Parse & Validate Response",
+        "Parse OK?",
+        "Error Response"
+      ],
+      "response": {
+        "status": 500,
+        "headers": {
+          "Content-Type": "application/json",
+          "X-CareerCalm-Status": "error"
+        },
+        "body": {
+          "error": "Claude API failed",
+          "details": "The coaching service returned an error. Please try again.",
+          "intention": "Practicing a project introduction.",
+          "suggestion": "The coaching service could not produce complete confidence cards. Please try again."
+        }
+      }
+    },
+    {
+      "fixture": "empty content array",
+      "expected_status": 500,
+      "path": [
+        "Claude Coaching API",
+        "Parse & Validate Response",
+        "Parse OK?",
+        "Error Response"
+      ],
+      "response": {
+        "status": 500,
+        "headers": {
+          "Content-Type": "application/json",
+          "X-CareerCalm-Status": "error"
+        },
+        "body": {
+          "error": "Claude API failed",
+          "details": "The coaching service did not return supported text content. Please try again.",
+          "intention": "Practicing a project introduction.",
+          "suggestion": "The coaching service could not produce complete confidence cards. Please try again."
+        }
+      }
+    },
+    {
+      "fixture": "non-array content",
+      "expected_status": 500,
+      "path": [
+        "Claude Coaching API",
+        "Parse & Validate Response",
+        "Parse OK?",
+        "Error Response"
+      ],
+      "response": {
+        "status": 500,
+        "headers": {
+          "Content-Type": "application/json",
+          "X-CareerCalm-Status": "error"
+        },
+        "body": {
+          "error": "Claude API failed",
+          "details": "The coaching service did not return supported text content. Please try again.",
+          "intention": "Practicing a project introduction.",
+          "suggestion": "The coaching service could not produce complete confidence cards. Please try again."
+        }
+      }
+    },
+    {
+      "fixture": "non-string text",
+      "expected_status": 500,
+      "path": [
+        "Claude Coaching API",
+        "Parse & Validate Response",
+        "Parse OK?",
+        "Error Response"
+      ],
+      "response": {
+        "status": 500,
+        "headers": {
+          "Content-Type": "application/json",
+          "X-CareerCalm-Status": "error"
+        },
+        "body": {
+          "error": "Claude API failed",
+          "details": "The coaching service did not return supported text content. Please try again.",
+          "intention": "Practicing a project introduction.",
+          "suggestion": "The coaching service could not produce complete confidence cards. Please try again."
+        }
+      }
+    },
+    {
+      "fixture": "null text block",
+      "expected_status": 500,
+      "path": [
+        "Claude Coaching API",
+        "Parse & Validate Response",
+        "Parse OK?",
+        "Error Response"
+      ],
+      "response": {
+        "status": 500,
+        "headers": {
+          "Content-Type": "application/json",
+          "X-CareerCalm-Status": "error"
+        },
+        "body": {
+          "error": "Claude API failed",
+          "details": "The coaching service did not return supported text content. Please try again.",
+          "intention": "Practicing a project introduction.",
+          "suggestion": "The coaching service could not produce complete confidence cards. Please try again."
+        }
+      }
+    },
+    {
+      "fixture": "unsupported content type",
+      "expected_status": 500,
+      "path": [
+        "Claude Coaching API",
+        "Parse & Validate Response",
+        "Parse OK?",
+        "Error Response"
+      ],
+      "response": {
+        "status": 500,
+        "headers": {
+          "Content-Type": "application/json",
+          "X-CareerCalm-Status": "error"
+        },
+        "body": {
+          "error": "Claude API failed",
+          "details": "The coaching service did not return supported text content. Please try again.",
+          "intention": "Practicing a project introduction.",
+          "suggestion": "The coaching service could not produce complete confidence cards. Please try again."
+        }
+      }
+    },
+    {
+      "fixture": "provider API error",
+      "expected_status": 500,
+      "path": [
+        "Claude Coaching API",
+        "Parse & Validate Response",
+        "Parse OK?",
+        "Error Response"
+      ],
+      "response": {
+        "status": 500,
+        "headers": {
+          "Content-Type": "application/json",
+          "X-CareerCalm-Status": "error"
+        },
+        "body": {
+          "error": "Claude API failed",
+          "details": "The coaching service returned an error. Please try again.",
+          "intention": "Practicing a project introduction.",
+          "suggestion": "The coaching service could not produce complete confidence cards. Please try again."
+        }
+      }
+    },
+    {
+      "fixture": "transport error output",
+      "expected_status": 500,
+      "path": [
+        "Claude Coaching API",
+        "Parse & Validate Response",
+        "Parse OK?",
+        "Error Response"
+      ],
+      "response": {
+        "status": 500,
+        "headers": {
+          "Content-Type": "application/json",
+          "X-CareerCalm-Status": "error"
+        },
+        "body": {
+          "error": "Claude API failed",
+          "details": "The coaching service returned an error. Please try again.",
+          "intention": "Practicing a project introduction.",
+          "suggestion": "The coaching service could not produce complete confidence cards. Please try again."
+        }
+      }
+    },
+    {
+      "fixture": "provider error alongside otherwise valid text",
+      "expected_status": 500,
+      "path": [
+        "Claude Coaching API",
+        "Parse & Validate Response",
+        "Parse OK?",
+        "Error Response"
+      ],
+      "response": {
+        "status": 500,
+        "headers": {
+          "Content-Type": "application/json",
+          "X-CareerCalm-Status": "error"
+        },
+        "body": {
+          "error": "Claude API failed",
+          "details": "The coaching service returned an error. Please try again.",
+          "intention": "Practicing a project introduction.",
+          "suggestion": "The coaching service could not produce complete confidence cards. Please try again."
+        }
+      }
+    },
+    {
+      "fixture": "missing card1",
+      "expected_status": 500,
+      "path": [
+        "Claude Coaching API",
+        "Parse & Validate Response",
+        "Parse OK?",
+        "Error Response"
+      ],
+      "response": {
+        "status": 500,
+        "headers": {
+          "Content-Type": "application/json",
+          "X-CareerCalm-Status": "error"
+        },
+        "body": {
+          "error": "Invalid confidence cards",
+          "details": "card1 must be an object with hook, anchor, exit and mantra.",
+          "intention": "Practicing a project introduction.",
+          "suggestion": "The coaching service could not produce complete confidence cards. Please try again."
+        }
+      }
+    },
+    {
+      "fixture": "missing card1.hook",
+      "expected_status": 500,
+      "path": [
+        "Claude Coaching API",
+        "Parse & Validate Response",
+        "Parse OK?",
+        "Error Response"
+      ],
+      "response": {
+        "status": 500,
+        "headers": {
+          "Content-Type": "application/json",
+          "X-CareerCalm-Status": "error"
+        },
+        "body": {
+          "error": "Invalid confidence cards",
+          "details": "card1.hook must be a nonempty string.",
+          "intention": "Practicing a project introduction.",
+          "suggestion": "The coaching service could not produce complete confidence cards. Please try again."
+        }
+      }
+    },
+    {
+      "fixture": "missing card1.anchor",
+      "expected_status": 500,
+      "path": [
+        "Claude Coaching API",
+        "Parse & Validate Response",
+        "Parse OK?",
+        "Error Response"
+      ],
+      "response": {
+        "status": 500,
+        "headers": {
+          "Content-Type": "application/json",
+          "X-CareerCalm-Status": "error"
+        },
+        "body": {
+          "error": "Invalid confidence cards",
+          "details": "card1.anchor must be a nonempty string.",
+          "intention": "Practicing a project introduction.",
+          "suggestion": "The coaching service could not produce complete confidence cards. Please try again."
+        }
+      }
+    },
+    {
+      "fixture": "missing card1.exit",
+      "expected_status": 500,
+      "path": [
+        "Claude Coaching API",
+        "Parse & Validate Response",
+        "Parse OK?",
+        "Error Response"
+      ],
+      "response": {
+        "status": 500,
+        "headers": {
+          "Content-Type": "application/json",
+          "X-CareerCalm-Status": "error"
+        },
+        "body": {
+          "error": "Invalid confidence cards",
+          "details": "card1.exit must be a nonempty string.",
+          "intention": "Practicing a project introduction.",
+          "suggestion": "The coaching service could not produce complete confidence cards. Please try again."
+        }
+      }
+    },
+    {
+      "fixture": "missing card1.mantra",
+      "expected_status": 500,
+      "path": [
+        "Claude Coaching API",
+        "Parse & Validate Response",
+        "Parse OK?",
+        "Error Response"
+      ],
+      "response": {
+        "status": 500,
+        "headers": {
+          "Content-Type": "application/json",
+          "X-CareerCalm-Status": "error"
+        },
+        "body": {
+          "error": "Invalid confidence cards",
+          "details": "card1.mantra must be a nonempty string.",
+          "intention": "Practicing a project introduction.",
+          "suggestion": "The coaching service could not produce complete confidence cards. Please try again."
+        }
+      }
+    },
+    {
+      "fixture": "missing card2",
+      "expected_status": 500,
+      "path": [
+        "Claude Coaching API",
+        "Parse & Validate Response",
+        "Parse OK?",
+        "Error Response"
+      ],
+      "response": {
+        "status": 500,
+        "headers": {
+          "Content-Type": "application/json",
+          "X-CareerCalm-Status": "error"
+        },
+        "body": {
+          "error": "Invalid confidence cards",
+          "details": "card2 must be an object with hook, anchor, exit and mantra.",
+          "intention": "Practicing a project introduction.",
+          "suggestion": "The coaching service could not produce complete confidence cards. Please try again."
+        }
+      }
+    },
+    {
+      "fixture": "missing card2.hook",
+      "expected_status": 500,
+      "path": [
+        "Claude Coaching API",
+        "Parse & Validate Response",
+        "Parse OK?",
+        "Error Response"
+      ],
+      "response": {
+        "status": 500,
+        "headers": {
+          "Content-Type": "application/json",
+          "X-CareerCalm-Status": "error"
+        },
+        "body": {
+          "error": "Invalid confidence cards",
+          "details": "card2.hook must be a nonempty string.",
+          "intention": "Practicing a project introduction.",
+          "suggestion": "The coaching service could not produce complete confidence cards. Please try again."
+        }
+      }
+    },
+    {
+      "fixture": "missing card2.anchor",
+      "expected_status": 500,
+      "path": [
+        "Claude Coaching API",
+        "Parse & Validate Response",
+        "Parse OK?",
+        "Error Response"
+      ],
+      "response": {
+        "status": 500,
+        "headers": {
+          "Content-Type": "application/json",
+          "X-CareerCalm-Status": "error"
+        },
+        "body": {
+          "error": "Invalid confidence cards",
+          "details": "card2.anchor must be a nonempty string.",
+          "intention": "Practicing a project introduction.",
+          "suggestion": "The coaching service could not produce complete confidence cards. Please try again."
+        }
+      }
+    },
+    {
+      "fixture": "missing card2.exit",
+      "expected_status": 500,
+      "path": [
+        "Claude Coaching API",
+        "Parse & Validate Response",
+        "Parse OK?",
+        "Error Response"
+      ],
+      "response": {
+        "status": 500,
+        "headers": {
+          "Content-Type": "application/json",
+          "X-CareerCalm-Status": "error"
+        },
+        "body": {
+          "error": "Invalid confidence cards",
+          "details": "card2.exit must be a nonempty string.",
+          "intention": "Practicing a project introduction.",
+          "suggestion": "The coaching service could not produce complete confidence cards. Please try again."
+        }
+      }
+    },
+    {
+      "fixture": "missing card2.mantra",
+      "expected_status": 500,
+      "path": [
+        "Claude Coaching API",
+        "Parse & Validate Response",
+        "Parse OK?",
+        "Error Response"
+      ],
+      "response": {
+        "status": 500,
+        "headers": {
+          "Content-Type": "application/json",
+          "X-CareerCalm-Status": "error"
+        },
+        "body": {
+          "error": "Invalid confidence cards",
+          "details": "card2.mantra must be a nonempty string.",
+          "intention": "Practicing a project introduction.",
+          "suggestion": "The coaching service could not produce complete confidence cards. Please try again."
+        }
+      }
+    },
+    {
+      "fixture": "missing card3",
+      "expected_status": 500,
+      "path": [
+        "Claude Coaching API",
+        "Parse & Validate Response",
+        "Parse OK?",
+        "Error Response"
+      ],
+      "response": {
+        "status": 500,
+        "headers": {
+          "Content-Type": "application/json",
+          "X-CareerCalm-Status": "error"
+        },
+        "body": {
+          "error": "Invalid confidence cards",
+          "details": "card3 must be an object with hook, anchor, exit and mantra.",
+          "intention": "Practicing a project introduction.",
+          "suggestion": "The coaching service could not produce complete confidence cards. Please try again."
+        }
+      }
+    },
+    {
+      "fixture": "missing card3.hook",
+      "expected_status": 500,
+      "path": [
+        "Claude Coaching API",
+        "Parse & Validate Response",
+        "Parse OK?",
+        "Error Response"
+      ],
+      "response": {
+        "status": 500,
+        "headers": {
+          "Content-Type": "application/json",
+          "X-CareerCalm-Status": "error"
+        },
+        "body": {
+          "error": "Invalid confidence cards",
+          "details": "card3.hook must be a nonempty string.",
+          "intention": "Practicing a project introduction.",
+          "suggestion": "The coaching service could not produce complete confidence cards. Please try again."
+        }
+      }
+    },
+    {
+      "fixture": "missing card3.anchor",
+      "expected_status": 500,
+      "path": [
+        "Claude Coaching API",
+        "Parse & Validate Response",
+        "Parse OK?",
+        "Error Response"
+      ],
+      "response": {
+        "status": 500,
+        "headers": {
+          "Content-Type": "application/json",
+          "X-CareerCalm-Status": "error"
+        },
+        "body": {
+          "error": "Invalid confidence cards",
+          "details": "card3.anchor must be a nonempty string.",
+          "intention": "Practicing a project introduction.",
+          "suggestion": "The coaching service could not produce complete confidence cards. Please try again."
+        }
+      }
+    },
+    {
+      "fixture": "missing card3.exit",
+      "expected_status": 500,
+      "path": [
+        "Claude Coaching API",
+        "Parse & Validate Response",
+        "Parse OK?",
+        "Error Response"
+      ],
+      "response": {
+        "status": 500,
+        "headers": {
+          "Content-Type": "application/json",
+          "X-CareerCalm-Status": "error"
+        },
+        "body": {
+          "error": "Invalid confidence cards",
+          "details": "card3.exit must be a nonempty string.",
+          "intention": "Practicing a project introduction.",
+          "suggestion": "The coaching service could not produce complete confidence cards. Please try again."
+        }
+      }
+    },
+    {
+      "fixture": "missing card3.mantra",
+      "expected_status": 500,
+      "path": [
+        "Claude Coaching API",
+        "Parse & Validate Response",
+        "Parse OK?",
+        "Error Response"
+      ],
+      "response": {
+        "status": 500,
+        "headers": {
+          "Content-Type": "application/json",
+          "X-CareerCalm-Status": "error"
+        },
+        "body": {
+          "error": "Invalid confidence cards",
+          "details": "card3.mantra must be a nonempty string.",
+          "intention": "Practicing a project introduction.",
+          "suggestion": "The coaching service could not produce complete confidence cards. Please try again."
+        }
+      }
+    },
+    {
+      "fixture": "wrong card type: null",
+      "expected_status": 500,
+      "path": [
+        "Claude Coaching API",
+        "Parse & Validate Response",
+        "Parse OK?",
+        "Error Response"
+      ],
+      "response": {
+        "status": 500,
+        "headers": {
+          "Content-Type": "application/json",
+          "X-CareerCalm-Status": "error"
+        },
+        "body": {
+          "error": "Invalid confidence cards",
+          "details": "card2 must be an object with hook, anchor, exit and mantra.",
+          "intention": "Practicing a project introduction.",
+          "suggestion": "The coaching service could not produce complete confidence cards. Please try again."
+        }
+      }
+    },
+    {
+      "fixture": "wrong card type: array",
+      "expected_status": 500,
+      "path": [
+        "Claude Coaching API",
+        "Parse & Validate Response",
+        "Parse OK?",
+        "Error Response"
+      ],
+      "response": {
+        "status": 500,
+        "headers": {
+          "Content-Type": "application/json",
+          "X-CareerCalm-Status": "error"
+        },
+        "body": {
+          "error": "Invalid confidence cards",
+          "details": "card2 must be an object with hook, anchor, exit and mantra.",
+          "intention": "Practicing a project introduction.",
+          "suggestion": "The coaching service could not produce complete confidence cards. Please try again."
+        }
+      }
+    },
+    {
+      "fixture": "wrong card type: string",
+      "expected_status": 500,
+      "path": [
+        "Claude Coaching API",
+        "Parse & Validate Response",
+        "Parse OK?",
+        "Error Response"
+      ],
+      "response": {
+        "status": 500,
+        "headers": {
+          "Content-Type": "application/json",
+          "X-CareerCalm-Status": "error"
+        },
+        "body": {
+          "error": "Invalid confidence cards",
+          "details": "card2 must be an object with hook, anchor, exit and mantra.",
+          "intention": "Practicing a project introduction.",
+          "suggestion": "The coaching service could not produce complete confidence cards. Please try again."
+        }
+      }
+    },
+    {
+      "fixture": "wrong card type: number",
+      "expected_status": 500,
+      "path": [
+        "Claude Coaching API",
+        "Parse & Validate Response",
+        "Parse OK?",
+        "Error Response"
+      ],
+      "response": {
+        "status": 500,
+        "headers": {
+          "Content-Type": "application/json",
+          "X-CareerCalm-Status": "error"
+        },
+        "body": {
+          "error": "Invalid confidence cards",
+          "details": "card2 must be an object with hook, anchor, exit and mantra.",
+          "intention": "Practicing a project introduction.",
+          "suggestion": "The coaching service could not produce complete confidence cards. Please try again."
+        }
+      }
+    },
+    {
+      "fixture": "wrong card type: boolean",
+      "expected_status": 500,
+      "path": [
+        "Claude Coaching API",
+        "Parse & Validate Response",
+        "Parse OK?",
+        "Error Response"
+      ],
+      "response": {
+        "status": 500,
+        "headers": {
+          "Content-Type": "application/json",
+          "X-CareerCalm-Status": "error"
+        },
+        "body": {
+          "error": "Invalid confidence cards",
+          "details": "card2 must be an object with hook, anchor, exit and mantra.",
+          "intention": "Practicing a project introduction.",
+          "suggestion": "The coaching service could not produce complete confidence cards. Please try again."
+        }
+      }
+    },
+    {
+      "fixture": "wrong field type: null",
+      "expected_status": 500,
+      "path": [
+        "Claude Coaching API",
+        "Parse & Validate Response",
+        "Parse OK?",
+        "Error Response"
+      ],
+      "response": {
+        "status": 500,
+        "headers": {
+          "Content-Type": "application/json",
+          "X-CareerCalm-Status": "error"
+        },
+        "body": {
+          "error": "Invalid confidence cards",
+          "details": "card3.mantra must be a nonempty string.",
+          "intention": "Practicing a project introduction.",
+          "suggestion": "The coaching service could not produce complete confidence cards. Please try again."
+        }
+      }
+    },
+    {
+      "fixture": "wrong field type: array",
+      "expected_status": 500,
+      "path": [
+        "Claude Coaching API",
+        "Parse & Validate Response",
+        "Parse OK?",
+        "Error Response"
+      ],
+      "response": {
+        "status": 500,
+        "headers": {
+          "Content-Type": "application/json",
+          "X-CareerCalm-Status": "error"
+        },
+        "body": {
+          "error": "Invalid confidence cards",
+          "details": "card3.mantra must be a nonempty string.",
+          "intention": "Practicing a project introduction.",
+          "suggestion": "The coaching service could not produce complete confidence cards. Please try again."
+        }
+      }
+    },
+    {
+      "fixture": "wrong field type: object",
+      "expected_status": 500,
+      "path": [
+        "Claude Coaching API",
+        "Parse & Validate Response",
+        "Parse OK?",
+        "Error Response"
+      ],
+      "response": {
+        "status": 500,
+        "headers": {
+          "Content-Type": "application/json",
+          "X-CareerCalm-Status": "error"
+        },
+        "body": {
+          "error": "Invalid confidence cards",
+          "details": "card3.mantra must be a nonempty string.",
+          "intention": "Practicing a project introduction.",
+          "suggestion": "The coaching service could not produce complete confidence cards. Please try again."
+        }
+      }
+    },
+    {
+      "fixture": "wrong field type: number",
+      "expected_status": 500,
+      "path": [
+        "Claude Coaching API",
+        "Parse & Validate Response",
+        "Parse OK?",
+        "Error Response"
+      ],
+      "response": {
+        "status": 500,
+        "headers": {
+          "Content-Type": "application/json",
+          "X-CareerCalm-Status": "error"
+        },
+        "body": {
+          "error": "Invalid confidence cards",
+          "details": "card3.mantra must be a nonempty string.",
+          "intention": "Practicing a project introduction.",
+          "suggestion": "The coaching service could not produce complete confidence cards. Please try again."
+        }
+      }
+    },
+    {
+      "fixture": "wrong field type: boolean",
+      "expected_status": 500,
+      "path": [
+        "Claude Coaching API",
+        "Parse & Validate Response",
+        "Parse OK?",
+        "Error Response"
+      ],
+      "response": {
+        "status": 500,
+        "headers": {
+          "Content-Type": "application/json",
+          "X-CareerCalm-Status": "error"
+        },
+        "body": {
+          "error": "Invalid confidence cards",
+          "details": "card3.mantra must be a nonempty string.",
+          "intention": "Practicing a project introduction.",
+          "suggestion": "The coaching service could not produce complete confidence cards. Please try again."
+        }
+      }
+    },
+    {
+      "fixture": "empty required field",
+      "expected_status": 500,
+      "path": [
+        "Claude Coaching API",
+        "Parse & Validate Response",
+        "Parse OK?",
+        "Error Response"
+      ],
+      "response": {
+        "status": 500,
+        "headers": {
+          "Content-Type": "application/json",
+          "X-CareerCalm-Status": "error"
+        },
+        "body": {
+          "error": "Invalid confidence cards",
+          "details": "card1.hook must be a nonempty string.",
+          "intention": "Practicing a project introduction.",
+          "suggestion": "The coaching service could not produce complete confidence cards. Please try again."
+        }
+      }
+    },
+    {
+      "fixture": "whitespace required field",
+      "expected_status": 500,
+      "path": [
+        "Claude Coaching API",
+        "Parse & Validate Response",
+        "Parse OK?",
+        "Error Response"
+      ],
+      "response": {
+        "status": 500,
+        "headers": {
+          "Content-Type": "application/json",
+          "X-CareerCalm-Status": "error"
+        },
+        "body": {
+          "error": "Invalid confidence cards",
+          "details": "card1.hook must be a nonempty string.",
+          "intention": "Practicing a project introduction.",
+          "suggestion": "The coaching service could not produce complete confidence cards. Please try again."
+        }
+      }
+    },
+    {
+      "fixture": "valid card text is preserved",
+      "expected_status": 200,
+      "path": [
+        "Claude Coaching API",
+        "Parse & Validate Response",
+        "Parse OK?",
+        "Success Response"
+      ],
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json",
+          "X-CareerCalm-Status": "success",
+          "Cache-Control": "no-cache"
+        },
+        "body": {
+          "card1": {
+            "hook": "  The demo uses ```json and {braces} literally.  ",
+            "anchor": "The team tested two approaches.",
+            "exit": "Can we follow up over coffee?",
+            "mantra": "I can ask one useful question."
+          },
+          "card2": {
+            "hook": "What surprised you this week?",
+            "anchor": "The demo highlighted a clear tradeoff.",
+            "exit": "Let's connect after the meeting.",
+            "mantra": "I do not need every answer."
+          },
+          "card3": {
+            "hook": "What are you working on next?",
+            "anchor": "The project has a concrete next step.",
+            "exit": "I will send you a short follow-up.",
+            "mantra": "Curiosity is enough to begin."
+          }
+        }
+      }
+    }
+  ]
+}

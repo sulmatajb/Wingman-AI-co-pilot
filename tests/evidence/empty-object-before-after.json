@@ -1,0 +1,54 @@
+{
+  "generated_at": "2026-10-16T05:22:49.746Z",
+  "baseline_commit": "b74a4bc2e37a52f1426fbf015a80e783fd5f30a2",
+  "baseline_workflow_sha256": "e53319f9d594563a967f6492cff0b7ec42cd4310e907a7706a530945b7c52c06",
+  "scope": "Offline exported Code-node execution and configured routing only; no live n8n or HTTP request.",
+  "fixture": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{}"
+      }
+    ]
+  },
+  "before": {
+    "parsed": {
+      "success": true,
+      "intention": "Practicing a project introduction.",
+      "data": {
+        "card1": {},
+        "card2": {},
+        "card3": {}
+      }
+    },
+    "response_node": "Success Response",
+    "configured_status": 200
+  },
+  "after": {
+    "path": [
+      "Claude Coaching API",
+      "Parse & Validate Response",
+      "Parse OK?",
+      "Error Response"
+    ],
+    "parsed": {
+      "success": false,
+      "error": "Invalid confidence cards",
+      "error_details": "card1 must be an object with hook, anchor, exit and mantra.",
+      "intention": "Practicing a project introduction."
+    },
+    "response": {
+      "status": 500,
+      "headers": {
+        "Content-Type": "application/json",
+        "X-CareerCalm-Status": "error"
+      },
+      "body": {
+        "error": "Invalid confidence cards",
+        "details": "card1 must be an object with hook, anchor, exit and mantra.",
+        "intention": "Practicing a project introduction.",
+        "suggestion": "The coaching service could not produce complete confidence cards. Please try again."
+      }
+    }
+  }
+}

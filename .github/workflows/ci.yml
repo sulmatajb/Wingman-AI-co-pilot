@@ -1,0 +1,32 @@
+name: Offline checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 22
+      - name: Run offline validation
+        run: node --test --test-concurrency=1 tests/*-validation.test.mjs
+      - name: Run synthetic request demo
+        run: node tests/input-demo.mjs
+      - name: Run synthetic research demo
+        run: node tests/research-demo.mjs
+      - name: Run synthetic response demo
+        run: node tests/validation-demo.mjs
+      - name: Run synthetic source demo
+        run: node tests/source-demo.mjs
