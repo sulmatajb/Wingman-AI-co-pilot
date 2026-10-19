@@ -40,3 +40,5 @@ Thumbs.db
 # API Keys (just in case)
 *-api-key.txt
 credentials.json
+.vercel
+.env*.local

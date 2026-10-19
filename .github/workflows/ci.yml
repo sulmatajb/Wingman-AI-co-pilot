@@ -1,4 +1,4 @@
-name: Offline checks
+name: Checks
 
 on:
   push:
@@ -20,8 +20,13 @@ jobs:
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
           node-version: 22
+          cache: npm
+      - name: Install server dependencies
+        run: npm ci
       - name: Run offline validation
-        run: node --test --test-concurrency=1 tests/*-validation.test.mjs
+        run: npm test
+      - name: Build public app
+        run: npm run build
       - name: Run synthetic request demo
         run: node tests/input-demo.mjs
       - name: Run synthetic research demo

@@ -1,6 +1,6 @@
 # Maintaining Wingman-workflow.json
 
-[`Wingman-workflow.json`](Wingman-workflow.json) is already included. New users can import it directly using [SETUP.md](SETUP.md); exporting a workflow first is not a setup requirement. Preserve the capital `W` in the filename because the offline harness reads that exact path.
+[`Wingman-workflow.json`](Wingman-workflow.json) is already included. New users can import it directly using [N8N-SETUP.md](N8N-SETUP.md); exporting a workflow first is not a setup requirement. Preserve the capital `W` in the filename because the offline harness reads that exact path.
 
 If you change a workflow in your own n8n instance, export its JSON and review the diff before replacing this file. Use n8n's [export/import documentation](https://docs.n8n.io/build/manage-workflows/export-and-import.md) for the available export controls in your version.
 

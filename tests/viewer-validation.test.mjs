@@ -92,15 +92,15 @@ class Node {
   setAttribute(name, value) { this.attributes[name] = value; }
   addEventListener(name, callback) { this.listeners[name] = callback; }
 }
-function app() {
+function app(fetch = async () => { throw new Error("Unexpected request"); }, clock = Date) {
   const nodes = new Map();
   const get = id => { if (!nodes.has(id)) nodes.set(id, new Node()); return nodes.get(id); };
   const document = { getElementById: get, createElement: () => new Node(), createDocumentFragment: () => Object.assign(new Node(), { fragment: true }) };
-  runInNewContext(readFileSync(new URL("../viewer/app.js", import.meta.url), "utf8"), { document, WingmanCards: viewer, WingmanExample: example });
-  return { get, choose: file => get("response-file").listeners.change({ target: { files: [file] } }), click: id => get(id).listeners.click() };
+  runInNewContext(readFileSync(new URL("../viewer/app.js", import.meta.url), "utf8"), { document, WingmanCards: viewer, WingmanExample: example, fetch, AbortController, Date: clock });
+  return { get, choose: file => get("response-file").listeners.change({ target: { files: [file] } }), click: id => get(id).listeners.click(), submit: scenario => { get("scenario").value = scenario; return get("scenario-form").listeners.submit({ preventDefault() {} }); } };
 }
 const file = (value, name = "synthetic.json") => ({ name, size: Buffer.byteLength(JSON.stringify(value)), text: async () => JSON.stringify(value) });
-function deferred() { let resolve; const promise = new Promise(done => { resolve = done; }); return { promise, resolve }; }
+function deferred() { let resolve, reject; const promise = new Promise((done, fail) => { resolve = done; reject = fail; }); return { promise, resolve, reject }; }
 
 test("actual app keeps complete previous result on invalid, oversized and unreadable imports", async () => {
   const ui = app(); await ui.choose(file(copy(), "accepted.json"));
@@ -141,4 +141,145 @@ test("actual app creates inert text and explicit safe external references", asyn
   const source = ui.get("sources").children[0];
   assert.equal(source.value, 3); assert.equal(source.children[0].rel, "noopener noreferrer");
   assert.equal(source.children[0].referrerPolicy, "no-referrer"); assert.equal(source.children[0].target, "_blank");
+});
+
+const scenario = "I am meeting a new teammate about our project.";
+const apiCards = () => ({ cards: [copy().card1, copy().card2, copy().card3] });
+const response = (body, status = 200, retry = null) => ({ ok: status >= 200 && status < 300, status, headers: { get: name => name === "Retry-After" ? retry : null }, json: async () => body });
+
+test("generation is primary and startup makes no request or synthetic claim", () => {
+  let calls = 0; const ui = app(() => { calls++; });
+  assert.equal(calls, 0);
+  assert.equal(ui.get("cards").children.length, 0);
+  assert.equal(ui.get("generate-button").disabled, false);
+  const html = readFileSync(new URL("../viewer/index.html", import.meta.url), "utf8");
+  assert.match(html, /connect-src 'self'/);
+  assert.match(html, /<form id="scenario-form"/);
+  assert.match(html, /<details class="saved-options">/);
+  assert.match(html, /sent to Google’s Gemini through Vercel AI Gateway/);
+  assert.match(html, /No live web research/);
+});
+
+test("generation posts only trimmed scenario and renders exactly three validated inert cards", async () => {
+  const calls = []; const data = apiCards(); data.cards[0].hook = '<img src=x onerror="alert(1)">';
+  const ui = app(async (...args) => { calls.push(args); return response(data); });
+  await ui.submit(`  ${scenario}  `);
+  assert.equal(calls.length, 1);
+  const [url, options] = calls[0];
+  assert.equal(url, "/api/generate"); assert.equal(options.method, "POST");
+  assert.equal(options.headers["Content-Type"], "application/json");
+  assert.deepEqual(JSON.parse(options.body), { scenario });
+  assert.equal(options.signal.aborted, false);
+  assert.equal(ui.get("mode").textContent, "Generated cards");
+  assert.equal(ui.get("cards").children.length, 3);
+  assert.equal(ui.get("cards").children[0].children[1].children[1].textContent, data.cards[0].hook);
+  assert.match(ui.get("source-note").textContent, /No live web research/);
+  assert.equal(ui.get("generate-button").disabled, false);
+});
+
+test("scenario limits reject before requests and accept exact boundaries", async () => {
+  let calls = 0; const ui = app(async () => { calls++; return response(apiCards()); });
+  for (const value of ["", " ".repeat(20), "a".repeat(9), "a".repeat(2001)]) {
+    await ui.submit(value); assert.equal(calls, 0); assert.match(ui.get("error").textContent, /10–2,000/);
+  }
+  await ui.submit("a".repeat(10)); await ui.submit("a".repeat(2000)); assert.equal(calls, 2);
+});
+
+test("pending state retains prior cards and disables duplicate submits until complete", async () => {
+  const pending = deferred(); const ui = app(() => pending.promise);
+  ui.click("example-button"); const cards = ui.get("cards").children;
+  const request = ui.submit(scenario);
+  assert.equal(ui.get("cards").children, cards);
+  assert.equal(ui.get("generate-button").disabled, true);
+  assert.equal(ui.get("scenario-form").attributes["aria-busy"], "true");
+  assert.match(ui.get("status").textContent, /previous cards/);
+  pending.resolve(response(apiCards())); await request;
+  assert.equal(ui.get("generate-button").disabled, false);
+  assert.equal(ui.get("scenario-form").attributes["aria-busy"], "false");
+});
+
+test("API errors, incomplete cards and malformed JSON preserve previous cards and context", async () => {
+  for (const bad of [response({ error: "Please try again." }, 503), response({ cards: [] }), response({ cards: [copy().card1, {}, copy().card3] }), response({ ...apiCards(), error: "not success" }), { ok: true, json: async () => { throw new Error("PRIVATE RESPONSE"); } }]) {
+    const ui = app(async () => bad); await ui.choose(file(copy(), "retained.json"));
+    const cards = ui.get("cards").children; await ui.submit(scenario);
+    assert.equal(ui.get("cards").children, cards);
+    assert.match(ui.get("context").textContent, /retained.json/);
+    assert.equal(ui.get("error").hidden, false);
+    assert.doesNotMatch(ui.get("error").textContent, /PRIVATE/);
+    assert.equal(ui.get("generate-button").disabled, false);
+  }
+});
+
+test("network failures use friendly controlled errors, not raw exceptions", async () => {
+  const ui = app(async () => { throw new Error("PRIVATE transport failure"); });
+  await ui.submit(scenario);
+  assert.match(ui.get("error").textContent, /Check your connection/);
+  assert.doesNotMatch(ui.get("error").textContent, /PRIVATE/);
+});
+
+test("429 Retry-After is useful and bounded; API error text remains literal", async () => {
+  for (const [retry, match] of [["15", /about 15 seconds/], ["90000", /wait a little/], ["<private>", /wait a little/], [null, /wait a little/]]) {
+    const ui = app(async () => response({ error: "<b>Too many requests</b>" }, 429, retry));
+    await ui.submit(scenario);
+    assert.match(ui.get("error").textContent, match);
+    assert.match(ui.get("error").textContent, /<b>Too many requests<\/b>/);
+    assert.equal(ui.get("error").children.length, 0);
+  }
+});
+
+for (const action of ["clear", "example", "import", "invalid import"]) {
+  test(`${action} aborts generation and late response body cannot replace that choice`, async () => {
+    const body = deferred(); let signal;
+    const ui = app(async (_, options) => { signal = options.signal; return { ok: true, json: () => body.promise }; });
+    ui.click("example-button");
+    const pending = ui.submit(scenario); await Promise.resolve();
+    if (action === "clear") ui.click("clear-button");
+    else if (action === "example") ui.click("example-button");
+    else await ui.choose(file(action === "import" ? copy() : { error: "bad" }, "chosen.json"));
+    const cards = ui.get("cards").children; const mode = ui.get("mode").textContent;
+    const error = ui.get("error").textContent;
+    assert.equal(signal.aborted, true);
+    body.resolve(apiCards()); await pending;
+    assert.equal(ui.get("cards").children, cards);
+    assert.equal(ui.get("mode").textContent, mode);
+    assert.equal(ui.get("error").textContent, error);
+    assert.equal(ui.get("generate-button").disabled, false);
+  });
+}
+
+test("newer generation wins over older response without ending its pending state", async () => {
+  const older = deferred(); const newer = deferred(); const signals = [];
+  const ui = app((_, options) => { signals.push(options.signal); return signals.length === 1 ? older.promise : newer.promise; });
+  const first = ui.submit(scenario); const second = ui.submit("A newer meeting with a different team.");
+  assert.equal(signals[0].aborted, true);
+  older.resolve(response(apiCards())); await first;
+  assert.equal(ui.get("generate-button").disabled, true);
+  assert.equal(ui.get("cards").children.length, 0);
+  newer.resolve(response(apiCards())); await second;
+  assert.match(ui.get("context").textContent, /newer meeting/);
+  assert.equal(ui.get("generate-button").disabled, false);
+});
+
+test("generation wins over a previously started file read", async () => {
+  const read = deferred(); const ui = app(async () => response(apiCards()));
+  const pending = ui.choose({ size: 10, name: "older.json", text: () => read.promise });
+  await ui.submit(scenario); read.resolve(JSON.stringify(copy())); await pending;
+  assert.equal(ui.get("mode").textContent, "Generated cards");
+});
+
+test("late failed generation cannot show an error after clear", async () => {
+  const late = deferred(); const ui = app(() => late.promise);
+  const pending = ui.submit(scenario); ui.click("clear-button");
+  late.reject(new Error("late failure")); await pending;
+  assert.equal(ui.get("error").hidden, true);
+  assert.equal(ui.get("status").textContent, "Cards cleared.");
+});
+
+test("HTTP-date Retry-After renders an approximate bounded wait", async () => {
+  const now = Date.parse("2026-10-19T12:00:00Z");
+  class FixedDate extends Date { static now() { return now; } }
+  const retry = new Date(now + 30000).toUTCString();
+  const ui = app(async () => response({ error: "Please pause." }, 429, retry), FixedDate);
+  await ui.submit(scenario);
+  assert.match(ui.get("error").textContent, /about 30 seconds/);
 });
